@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Futuristic Chrome Extension",
+  "version": "1.0.0",
+  "description": "A modern, futuristic Chrome extension with React interface",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Futuristic Extension"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["web-interface/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
